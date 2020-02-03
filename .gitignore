@@ -1,2 +1,2 @@
 .git
-blog/__pycache__
+*.pyc
