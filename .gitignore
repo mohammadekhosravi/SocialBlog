@@ -1,3 +1,5 @@
+migrations
+**/*.sqlite
 # Ignore .git folder
 .git
 # Byte-compiled / optimized / DLL files
