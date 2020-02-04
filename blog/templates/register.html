@@ -2,22 +2,48 @@
 
 {% block content %}
 
-<form method="POST">
+<div class="container">
+  <form method="POST">
 
     {# This hidden_tag is a CSRF security feature. #}
 
     {{ form.hidden_tag() }}
 
-    {{ form.email.label }} {{ form.email() }}<br>
+    <div class="form-group">
 
-    {{ form.username.label }} {{ form.username() }}<br>
+      <strong>{{ form.email.label(class="form-group") }}</strong>
+      {{ form.email(class="form-control") }}<br>
 
-    {{ form.password.label }} {{ form.password() }}<br>
+    </div>
 
-    {{ form.pass_confirm.label }} {{ form.pass_confirm() }}<br>
+    <div class="form-group">
 
-    {{ form.submit() }}
+      <strong>{{ form.username.label(class="form-group") }}</strong>
+      {{ form.username(class="form-control") }}<br>
 
-</form>
+    </div>
+
+    <div class="form-group">
+
+      <strong>{{ form.password.label(class="form-group") }}</strong>
+      {{ form.password(class="form-control") }}<br>
+
+    </div>
+
+    <div class="form-group">
+
+      <strong>{{ form.pass_confirm.label(class="form-group") }}</strong>
+      {{ form.pass_confirm(class="form-control") }}<br>
+
+    </div>
+
+    <div class="form-group">
+
+      {{ form.submit(class="btn btn-primary") }}
+
+    </div>
+
+  </form>
+</div>
 
 {% endblock %}
