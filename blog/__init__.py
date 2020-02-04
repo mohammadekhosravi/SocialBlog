@@ -8,9 +8,11 @@ app = Flask(__name__)
 
 from blog.core.views import core
 from blog.error_handler.handlers import errors
+from blog.users.views import users
 
 app.register_blueprint(core)
 app.register_blueprint(errors)
+app.register_blueprint(users)
 ###############################################
 ##############Database Setup###################
 basedir = os.path.abspath(os.path.dirname(__file__))
