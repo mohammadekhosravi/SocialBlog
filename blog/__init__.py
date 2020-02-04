@@ -8,13 +8,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY']= 'mysecret'
 
-from blog.core.views import core
-from blog.error_handler.handlers import errors
-from blog.users.views import users
-
-app.register_blueprint(core)
-app.register_blueprint(errors)
-app.register_blueprint(users)
 ###############################################
 ##############Database Setup###################
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -31,3 +24,11 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'users.login'
 ###############################################
+
+from blog.core.views import core
+from blog.error_handler.handlers import errors
+from blog.users.views import users
+
+app.register_blueprint(core)
+app.register_blueprint(errors)
+app.register_blueprint(users)
