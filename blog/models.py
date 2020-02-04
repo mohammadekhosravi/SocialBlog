@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     
     __tablename__ = 'users'
 
-    identifier = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     profile_image = db.Column(db.String(128), nullable=False, default='default_profile.png')
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
@@ -34,8 +34,8 @@ class BlogPost(db.Model, UserMixin):
     
     users = db.relationship(User)
 
-    identifier = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.identifier'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     title = db.Column(db.String(256), nullable=False)
@@ -47,4 +47,4 @@ class BlogPost(db.Model, UserMixin):
         self.user_id = user_id
 
     def __repr__(self):
-        return f"Post ID: {self.identifier} -- Date: {self.date} -- Title: {self.title}"
+        return f"Post ID: {self.id} -- Date: {self.date} -- Title: {self.title}"
