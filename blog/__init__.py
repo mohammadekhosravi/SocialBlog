@@ -6,6 +6,8 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY']= 'mysecret'
+
 from blog.core.views import core
 from blog.error_handler.handlers import errors
 from blog.users.views import users
