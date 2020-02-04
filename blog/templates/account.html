@@ -6,13 +6,11 @@
 
 <div class="jumbotron">
 
-  <div align='center'>
+  <div align='left'>
 
-    <h1 >Welcome to the page for {{current_user.username}}</h1>
+    <p><strong>Profile image</strong></p>
 
     <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
-
-    <p>{{ current_user.email }}</p>
 
   </div>
 
@@ -26,23 +24,23 @@
 
     <div class="form-group">
 
-      {{ form.username.label(class="form-group") }}
+      <strong>{{ form.username.label(class="form-group") }}</strong>
 
-      {{form.username(class='form-control')  }}
+      {{form.username(class="form-control")  }}
 
     </div
 
     <div class="form-group">
 
-      {{ form.email.label(class="form-group") }}
+      <strong>{{ form.email.label(class="form-group") }}</strong>
 
-      {{form.email(class='form-control')  }}
+      {{form.email(class="form-control")  }}
 
     </div>
 
     <div class="form-group">
 
-      {{ form.picture.label(class="form-group") }}
+      <strong>{{ form.picture.label(class="form-group") }}</strong>
 
       {{ form.picture(class="form-control-file") }}
 
