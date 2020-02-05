@@ -4,7 +4,7 @@ from blog import db
 from blog.models import BlogPost
 from blog.blog_posts.forms import BlogPostForm
 
-blog_posts = Blueprint('blog_bosts', __name__)
+blog_posts = Blueprint('blog_posts', __name__)
 
 # Create
 @blog_posts.route('/create', methods=['GET', 'POST'])
